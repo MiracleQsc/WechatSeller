@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miracle.wechat.mappers.ProductCategoryMapper">
+
+	<insert id="insertProductCategory" parameterType="com.miracle.wechat.entity.ProductCategory">
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+		insert into
+		product_category(productname,productdesc,createtime,updatetime)
+		value(#{productname},#{productdesc},#{createtime},#{updatetime})
+	</insert>
+
+	<update id="updateProductCategory" parameterType="com.miracle.wechat.entity.ProductCategory">
+		update
+		product_category set
+		productname=#{productname},productdesc=#{productdesc} where id=#{id}
+	</update>
+
+
+	<delete id="deleteProductCategory" parameterType="com.miracle.wechat.entity.ProductCategory">
+		delete from
+		product_category where id = #{id}
+	</delete>
+
+    <select id="findProductCategoryById" parameterType="int" resultType="com.miracle.wechat.entity.ProductCategory">
+        select * from product_category where id = #{value}
+    </select>
+
+
+</mapper>
