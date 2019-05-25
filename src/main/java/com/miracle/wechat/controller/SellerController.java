@@ -27,7 +27,7 @@ public class SellerController {
 	public ProductCategory addProductCategory(){
 		ProductCategory productCategory  = new ProductCategory();
 		productCategory.setProductname("主食");
-		productCategory.setProductdesc("米饭，馒头，面条，披萨 应有尽有");
+		productCategory.setProductdesc("米饭，馒头，面条，披萨，肉夹馍  应有尽有");
 		productCategory.setCreatetime(new Date());
 		productCategory.setUpdatetime(new Date());
 		
